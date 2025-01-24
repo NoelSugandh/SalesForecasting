@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #670d10 0%, #092756 100%);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width for proper alignment */
+}
+
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.side-tab {
+    position: absolute;
+    left: -250px; /* Initially hidden off-screen */
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #333333;
+    transition: left 0.3s ease;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.side-tab.active {
+    left: 0;
+}
+
+.side-tab nav {
+    padding: 20px;
+}
+
+.side-tab ul {
+    list-style: none;
+    padding: 30px;
+}
+
+.side-tab ul li {
+    margin: 15px 0;
+}
+
+.side-tab ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(57, 173, 219, 0.3) 0%, rgba(42, 60, 87, 0.3) 100%),
+                linear-gradient(-45deg, rgba(103, 13, 16, 0.4) 0%, rgba(9, 39, 86, 0.4) 100%);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: 60px; /* To avoid overlap with the header */
+}
+
+.profile-container h2 {
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 28px;
+    margin-right: 45px;
+    color: #fff;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.input-group input {
+    width: calc(50% - 10px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.5s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.btn {
+    width: calc(100% - 20px);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    background: linear-gradient(135deg, rgba(57, 173, 219, 0.3) 0%, rgba(42, 60, 87, 0.3) 100%),
+                linear-gradient(-45deg, rgba(103, 13, 16, 0.4) 0%, rgba(9, 39, 86, 0.4) 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, rgba(20, 130, 160, 0.4) 0%, rgba(30, 40, 70, 0.4) 100%);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Flash messages container */
+.flashes {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    animation: fadeInOut 3s forwards;
+    color: #fff;
+}
+
+.flashes .success {
+    background: rgba(57, 173, 219, 0.6);
+}
+
+.flashes .error {
+    background: rgba(103, 13, 16, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        left: 10px;
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Ensure the logo link doesn't change color */
+.logo a {
+    font-size: 24px;
+    color: white;  /* Set the color to white for the logo */
+    text-decoration: none;  /* Remove underline */
+    font-weight: bold;
+}
+
+/* Prevent color changes on hover, active, or visited */
+.logo a:hover,
+.logo a:focus,
+.logo a:active,
+.logo a:visited {
+    color: white;  /* Keep the color the same */
+    text-decoration: none;  /* Keep it without underline */
+}

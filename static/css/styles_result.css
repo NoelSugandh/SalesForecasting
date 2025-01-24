@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #670d10 0%, #092756 100%);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.side-tab {
+    position: absolute;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #333333;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.side-tab.active {
+    left: 0;
+}
+
+.side-tab nav {
+    padding: 20px;
+}
+
+.side-tab ul {
+    list-style: none;
+    padding: 30px;
+}
+
+.side-tab ul li {
+    margin: 15px 0;
+}
+
+.side-tab ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.content {
+    margin-top: 60px;
+    padding: 20px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    width: calc(100% - 20px);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(57, 173, 219, 0.3) 0%, rgba(42, 60, 87, 0.3) 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, rgba(20, 130, 160, 0.4) 0%, rgba(30, 40, 70, 0.4) 100%);
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        left: 10px;
+    }
+}
+
+/* Ensure the logo link doesn't change color */
+.logo a {
+    font-size: 24px;
+    color: white;  /* Set the color to white for the logo */
+    text-decoration: none;  /* Remove underline */
+    font-weight: bold;
+}
+
+/* Prevent color changes on hover, active, or visited */
+.logo a:hover,
+.logo a:focus,
+.logo a:active,
+.logo a:visited {
+    color: white;  /* Keep the color the same */
+    text-decoration: none;  /* Keep it without underline */
+}

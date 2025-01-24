@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_profiles.css') }}">
+</head>
+<body>
+   {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+   {% endwith %}
+
+    <header>
+        <div class="header-content">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">&#9776;</div>
+            <div class="logo"><a href="/home">Sales Forecasting</a></div>
+        </div>
+    </header>
+
+    <div class="side-tab" id="sideTab">
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/profile">Profiles</a></li>
+                <li><a href="/how_to_use">How to Use</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <div class="profile-container">
+       <h2>Profile</h2>
+       <form method="POST">
+           <div class="input-group">
+               <label for="fullName">Full Name</label>
+               <input type="text" id="fullName" name="fullName" value="{{ user_data['full_name'] }}" required>
+           </div>
+           <div class="input-group">
+               <label for="email">Email</label>
+               <input type="email" id="email" name="email" value="{{ user_data['email'] }}" required>
+           </div>
+           <div class="input-group">
+               <label for="phoneNumber">Phone Number</label>
+               <input type="text" id="phoneNumber" name="phoneNumber" value="{{ user_data['phone_number'] }}" required>
+           </div>
+           <div class="input-group">
+               <label for="password">New Password (Optional)</label>
+               <input type="password" id="password" name="password">
+           </div>
+           <div class="input-group">
+               <label for="confirmPassword">Confirm New Password</label>
+               <input type="password" id="confirmPassword" name="confirmPassword">
+           </div>
+           <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+       </form>
+   </div>
+
+       <script>
+            function toggleMenu() {
+                const sideTab = document.getElementById('sideTab');
+                const overlay = document.getElementById('overlay');
+                const menuToggle = document.getElementById('menuToggle');
+
+                sideTab.classList.toggle('active');
+                overlay.classList.toggle('active');
+
+                // Change hamburger to X when active
+                if (sideTab.classList.contains('active')) {
+                    menuToggle.innerHTML = '&#10005;'; // Change to X
+                } else {
+                    menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+                }
+            }
+
+            function closeMenu() {
+                const sideTab = document.getElementById('sideTab');
+                const overlay = document.getElementById('overlay');
+                const menuToggle = document.getElementById('menuToggle');
+
+                sideTab.classList.remove('active');
+                overlay.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+            }
+        setTimeout(function() {
+            const flashes = document.querySelectorAll('.flashes li');
+            flashes.forEach(function(flash) {
+                flash.style.opacity = 0;  // Fade out
+                flash.style.transform = 'translateY(-10px)';
+            });
+        }, 3000);
+       </script>
+</body>
+</html>

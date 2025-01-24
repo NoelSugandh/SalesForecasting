@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="container">
+        <!-- Registration Form -->
+        <div id="registrationFormContainer">
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <h2>Registration</h2>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+                <select id="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <label><input type="checkbox" id="agreeTerms" required> Agree to <a href="/terms_conditions" target="D:\Project\templates\Terms_Conditions">Terms and Conditions</a></label>
+
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="/">Login</a></p>
+        </div>
+
+        <!-- Success Message
+        <div id="successMessage" class="hidden">
+            <p>Registration Successful! You can now login.</p>
+        </div> -->
+    </div>
+
+<!--    <script src="script.js"></script> -->
+</body>
+</html>

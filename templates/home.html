@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecasting</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+   {% endwith %}
+
+    <header>
+        <div class="header-content">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">&#9776;</div>
+            <div class="logo"><a href="/home">Sales Forecasting</a></div>
+        </div>
+    </header>
+
+    <div class="side-tab" id="sideTab">
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/profile">Profiles</a></li>
+                <li><a href="/how_to_use">How to Use</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <div class="home">
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="input-group">
+                <input type="text" name="Item_Identifier" placeholder="Item Identifier" required />
+                <input type="text" name="Item_Weight" placeholder="Item Weight" required />
+            </div>
+            <div class="input-group">
+                <input type="text" name="Item_Fat_Content" placeholder="Item Fat Content" required />
+                <input type="text" name="Item_Visibility" placeholder="Item Visibility" required />
+            </div>
+            <div class="input-group">
+                <input type="text" name="Item_Type" placeholder="Item Type" required />
+                <input type="text" name="Item_MRP" placeholder="Item MRP" required />
+            </div>
+            <div class="input-group">
+                <input type="text" name="Outlet_Identifier" placeholder="Outlet Identifier" required />
+                <input type="text" name="Outlet_Establishment_Year" placeholder="Outlet Establishment Year" required />
+            </div>
+            <div class="input-group">
+                <input type="text" name="Outlet_Size" placeholder="Outlet Size" required />
+                <input type="text" name="Outlet_Location_Type" placeholder="Outlet Location Type" required />
+            </div>
+            <input type="text" name="Outlet_Type" placeholder="Outlet Type" required />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+
+            sideTab.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Change hamburger to X when active
+            if (sideTab.classList.contains('active')) {
+                menuToggle.innerHTML = '&#10005;'; // Change to X
+            } else {
+                menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+            }
+        }
+
+        function closeMenu() {
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+
+            sideTab.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+        }
+    setTimeout(function() {
+        const flashes = document.querySelectorAll('.flashes li');
+        flashes.forEach(function(flash) {
+            flash.style.opacity = 0;  // Fade out
+            flash.style.transform = 'translateY(-10px)';
+        });
+    }, 3000);
+    if (window.location.pathname === "/home") {
+        // Disable back button behavior to prevent going back to the login page after logging in
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function() {
+            // If the user is coming from the login page (index page)
+            if (document.referrer.includes("/")) {
+                // Reload the home page instead of going back to login page
+                window.location.href = "/home";  // Redirect to the home page
+            } else {
+                window.history.back();  // Go back to the previous page
+            }
+        };
+    }
+
+    </script>
+</body>
+</html>

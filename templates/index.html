@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div id="container">
+        <!-- Login Form -->
+        <div id="loginFormContainer">
+            <form id="loginForm" action="/" method="post">
+                <h2>Login</h2>
+                <input type="text" id="usernameOrEmail" name="usernameOrEmail" placeholder="Username Or Email Address" required>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="/register">Register</a></p>
+            <p><a href="/forgot_password" class="forgot-password">Forgot Password?</a></p>
+        </div>
+    </div>
+ <script>
+    // Automatically hide flash messages after 3 seconds
+    setTimeout(function() {
+        const flashes = document.querySelectorAll('.flashes li');
+        flashes.forEach(function(flash) {
+            flash.style.opacity = 0;  // Fade out the flash message
+            flash.style.transform = 'translateY(-10px)';
+        });
+    }, 3000);
+    if (window.location.pathname === "/") {
+        // Disable the back button behavior if user is on login page
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function() {
+            // Allow users to go back to the register page if they are coming from there
+            if (document.referrer.includes("/register")) {
+                window.history.back();  // Go back to the register page
+            } else {
+                window.history.pushState(null, null, window.location.href);  // Stay on login page
+            }
+        };
+    }
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordField = document.getElementById("loginPassword");
+
+    togglePassword.addEventListener("click", function() {
+    // Toggle the input type between password and text
+    const type = passwordField.type === "password" ? "text" : "password";
+    passwordField.type = type;
+});
+
+ </script>
+</body>
+</html>

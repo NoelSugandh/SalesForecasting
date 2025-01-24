@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_result.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">&#9776;</div>
+            <div class="logo"><a href="/home">Sales Forecasting</a></div>
+        </div>
+    </header>
+
+    <div class="side-tab" id="sideTab">
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/profile">Profiles</a></li>
+                <li><a href="/how_to_use">How to Use</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <div id="result" class="content">
+        <div id="FormContainer">
+            <form id="Form" action="/home">
+                <h2>Prediction</h2>
+                <p>{{ prediction_text }}</p>
+                <button type="submit">Home</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+
+            sideTab.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            if (sideTab.classList.contains('active')) {
+                menuToggle.innerHTML = '&#10005;'; // Change to X
+            } else {
+                menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+            }
+        }
+
+        function closeMenu() {
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+
+            sideTab.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+        }
+    </script>
+</body>
+</html>

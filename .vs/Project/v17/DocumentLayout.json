@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\app.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.py",
+              "DocumentMoniker": "D:\\Project\\app.py",
+              "RelativeDocumentMoniker": "app.py",
+              "ToolTip": "D:\\Project\\app.py",
+              "RelativeToolTip": "app.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXmSURBVFhH5ZZfbFRVHsc/55x7Z9ppe2doh2LcCrgrDSpL8M8DYxQXN7zhkzGEZZNNxUTjBk1M3Lgb40bfiH\u002BiMbKpUePLGpJNeCEGAyyJVDCIwBJgp7QGqdiK0nb6hzLTzj3ntw935s5MaYx/Gn3YX3LyO\u002Bdk7ny\u002B5/fn3Au/pInI/K2f3VR18sHEObmj\u002BUb\u002BXT7AP0q9XHZDZPHJao\u002BsNmS1ImuEDuPo8EI6/BDPOYxzeNVhbW2\u002BwFCVA49cMdy\u002BblIB6KqAdU2/4nRxmFWmm1u92yhhmVOOORxlHCGCrQ4FPzZ4k1fTlOZm43UcgX9d/UDSOs3h8S85XTrCgDtLSpfJGCGjITCWwLNkjCPthTQjhKHGlRXOOghBhRZjBS0W31o8Z0lIiC8WBaxtCTBzU4xLkdyaCdUg4KmJZyWtMuz5YpiRcIIbTIGUCWk2ISkTkjK24qM97YTSrKFcVrgQJBS0tRhx\u002BC4kISFNOJoIaVWWrNbk2jMob4ZvypPct\u002BpKo4Dfjq6XjMrw9Uiawoyls\u002B\u002B/uJLDlSy2aHElF3tXctiSxRUjL6EgNho44rm4yp6Fd//ZyZ1dWbzELF\u002BWx/jdypHGGhi33zJoByibUQKvvKhwcVHBaO2T8JtBxdiagEB7BKJJ65DAm4vhH/3tI/pe6OPIziN88ton9D7dy4r2FTE8SAW8\u002BtdXye/PM3lmkvyhPDt6dmAwMVxsJMCIoZkmtCwkQCnS2hB4lsAP4xN3dXSR9JIcPXOUlqYWHrz3QXY9uwsJhaRJcuC9Azzy8CO0Z9o5/p/jLFu6jBefeZHcnbkYXi8giY\u002Bu66BYQLvSZJQi41nazFwcdoDBrwZ58uUn2bxjM4NDg9y95m5W3bSKx7Y\u002BRvfN3fR92sfq\u002B1ez8eGNrN24lm2Pb\u002BPw0cMN6YBKxSlVX3p1Agx0eJA2ZQKvHEcAAAeu6Lh06RJjhTEAEl6C3LocAG\u002B\u002B9yajY6OIFYaGhtj74d5GeHQOEIXQwK8JWGosWSNkTEibXy3CSMBdq\u002B/ixPsn\u002BPzDz1m/bj0HjxzkTP4MyUQSgLHCWEPBzYdXI6AAUXrhCHT6jmW\u002BJdBRBKrVDjA5PcnHJz7mrd1v0fOXHrb8eQtiheOnjgOwZfOWBnhnR2cDvD4F0piBmoAlytGuHCmxeNbGrQYwcHGAJ55/gudeeY49\u002B/ZQnisjVnj9ndcZvjzMo9seZd/ufWz/w3Z2vbSL85\u002BdZ9P9m2rwSiajFESjarGANEIgDt8KLnRxn0cPRv09v88nChNsemgTh/oOsSG3gTd2vkHPth72H9zPyVMnY3gcAQ2i6o5fH4y915aLU3Dh2wQjJZ\u002B3/3T5e18yYoV0a5ru33Rz7uw5pqenG\u002BDihPcPLueem35Na5Dk7HQ/G1Z80XgTtoqj1Tl8ayGUHwQXKxQKBY4dO7YgPE4B10cgFtDmHIFzJJ1DW/uD4DK/4ObBpZqCKJtRK1YsFtAShqSsJRE6dOgWFx4XYRW\u002BQBGmQktrWCZZ\u002BXpZTHj86aeqXVCzWEDSWZLWkRCLPw\u002ByKHAAFNJ4D9UEJKwlYS1GBN9VasAJVwevMnNhhpmhGa5dukZxpEjpmxKzV2avA343vJoCaYhArKUw3CoAh8dbGJxJ8Pc/jiNW6N3ZGz3ian9Qzen2x7d/b/juvpXc03ULiSVJ8lN5Ni6/oPguAc9vHVuksEe2u28lua5b8Jck6J/q54GKgDgFs0pRru/RRYRXrfHIdXsAQ18HgihOjjeRDD2mpv3GX/4EU0CbZ1hzw83o9gQDk3keWB7dhLGAwa/SgoJrxXayoQdKoUSB0mgUSunoVVZpJaeiOQpENKI0TlT0uhWNRYFEew6FiMFkltKUnOb8VJ7fzxeQv9gmxrXgqRRGG4wxeMrD0wYfDx\u002BDUQa0QpRCKh5tEMCpiggMjshbNFYZrJh4La7IxanT1wvo708L2kMZjdEarTUeYNB4aDxRGFWBompCFKA0go7WaBwqElFdi8YpE3nRjNppcl1n51XD/6v9D0xj\u002BEtSb3b3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-11-12T21:09:56.06Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

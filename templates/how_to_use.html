@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_how.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">&#9776;</div>
+            <div class="logo"><a href="/home">Sales Forecasting</a></div>
+        </div>
+    </header>
+
+    <div class="side-tab" id="sideTab">
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/profile">Profiles</a></li>
+                <li><a href="/how_to_use">How to Use</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <div class="content_how">
+        <h1>How to Use</h1>
+        <p>
+            Item Identifier - Between 1 to 100 drink
+                                      100 to 900 food
+                                      900 to 1350 not food
+
+            Item Weight - 4.555000 to 213.50000
+
+            Item Fat - Low Fat = 0
+                       Regular = 1
+
+            Item Visibility -
+            Low Visibility	  -    Poorly visible (back shelves, etc.)	0.00–0.02
+            Medium Visibility -   Moderately visible (mid-shelf)	        0.02–0.1
+            High Visibility	  -   Highly visible (eye-level, promos)  	0.1+
+
+            Item Type
+            0 - Baking Goods
+            1 - Breads
+            2 - Breakfast
+            3 - Canned
+            4 - Dairy
+            5 - Frozen Foods
+            6 - Fruits and Vegetables
+            7 - Hard Drinks
+            8 - Health and Hygiene
+            9 - Household
+            10 - Meat
+            11 - Others
+            12 - Seafood
+            13 - Snack Foods
+            14 - Soft Drinks
+            15 - Starchy Foods
+
+            Outlet Identifier (based on the size of the company):
+            BIG COMPANY - 9
+            MEDIUM COMPANY - 3
+            SMALL COMPANY - 1
+
+            Outlet Establishment - Between 1985 to 2009
+
+            Outlet Size:
+            high - 0
+            medium - 1
+            small - 2
+
+            Outlet-Type:
+            type 0 = grocery store
+            type 1 = partner shop
+            type 2 = retail shop
+
+            Location-Type:
+            big city    - tier 1 = 0
+            medium city - tier 2 = 1
+            small city  - tier 3 = 2
+
+            Item MRP - 1 dollars to 266 dollars</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+
+            sideTab.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            if (sideTab.classList.contains('active')) {
+                menuToggle.innerHTML = '&#10005;'; // Change to X
+            } else {
+                menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+            }
+        }
+
+        function closeMenu() {
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+
+            sideTab.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '&#9776;'; // Change back to hamburger
+        }
+    </script>
+</body>
+</html>
